@@ -1,4 +1,4 @@
-import ApiService from "@/services/api";
+import ApiService from "@/services/api.js";
 
 export default {
   list(params) {
@@ -8,7 +8,7 @@ export default {
     return ApiService.get(`/api/delivery-service-providers/${id}/`);
   },
   create(data) {
-    return ApiService.post("/api/delivery-service-providers/", data);
+    return ApiService.post("/api/v1/ecommerce/delivery-service-providers/", data);
   },
   update(id, data) {
     return ApiService.put(`/api/delivery-service-providers/${id}/`, data);

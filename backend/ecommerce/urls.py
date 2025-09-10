@@ -36,5 +36,4 @@ customer_router.register(r'shipping-addresses', ShippingAddressViewSet, basename
 urlpatterns = [
     path(r'api/v1/ecommerce/', include(router.urls)),
     path(r'api/v1/ecommerce/', include(customer_router.urls)),
-    path('api/', include(router.urls))
 ]
