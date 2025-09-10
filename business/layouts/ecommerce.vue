@@ -41,11 +41,13 @@
               <Document class="el-icon" />
               <span>{{ t("Orders") }}</span>
             </el-menu-item>
-            <div class="text-white px-2">
-              <span>Todo: Add more features here.</span>
-            </div>
+            <el-menu-item index="/e-commerce/delivery-service-providers">
+              <Van class="el-icon" />
+              <span>{{ t("Delivery Providers") }}</span>
+            </el-menu-item>
           </Sidebar>
         </aside>
+
         <div class="flex-auto">
           <slot />
         </div>
@@ -64,6 +66,7 @@ import IconDashboard from "~/assets/icons/dashboard.svg";
 import IconProduct from "~/assets/icons/product.svg";
 import IconPromotion from "~/assets/icons/promotion.svg";
 import { Document, Folder } from "@element-plus/icons-vue";
+import { Van } from "@element-plus/icons-vue";
 import { useOauthStore } from "@/stores/oauth";
 
 const { t } = useI18n();
