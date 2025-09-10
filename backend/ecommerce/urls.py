@@ -14,6 +14,8 @@ from .views import (
     OrderViewSet
 )
 
+from rest_framework.routers import DefaultRouter
+from ecommerce.views.delivery_service_provider import DeliveryServiceProviderViewSet
 
 app_name = "ecommerce"
 router = routers.SimpleRouter(trailing_slash=False)
@@ -25,6 +27,7 @@ router.register(r"products", ProductViewSet, basename="ecommerce-products")
 router.register(r"promotions", PromotionViewSet, basename="ecommerce-promotions")
 router.register(r"carts", CartViewSet, basename="ecommerce-carts")
 router.register(r"orders", OrderViewSet, basename="ecommerce-orders")
+router.register(r'delivery-service-providers', DeliveryServiceProviderViewSet)
 
 router.register(r"customers", CustomerViewSet, basename="ecommerce-customers")
 customer_router = routers.NestedSimpleRouter(router, r'customers', lookup='customers')
@@ -32,5 +35,6 @@ customer_router.register(r'shipping-addresses', ShippingAddressViewSet, basename
 
 urlpatterns = [
     path(r'api/v1/ecommerce/', include(router.urls)),
-    path(r'api/v1/ecommerce/', include(customer_router.urls))
+    path(r'api/v1/ecommerce/', include(customer_router.urls)),
+    path('api/', include(router.urls))
 ]

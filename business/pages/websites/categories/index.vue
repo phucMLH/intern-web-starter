@@ -6,6 +6,6 @@
 
 <script setup>
 definePageMeta({
-  layout: "websites"
+  layout: "websites",
 });
 </script>
